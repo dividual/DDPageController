@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "DDPageController.h"
+@class Page2NC;
 
 @interface MainPageController : DDPageController
+
+-(Page2NC*)page2NC;
 
 @end

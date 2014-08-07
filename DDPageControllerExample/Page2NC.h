@@ -10,4 +10,6 @@
 
 @interface Page2NC : UINavigationController
 
+-(void)setViewControllersTest;
+
 @end

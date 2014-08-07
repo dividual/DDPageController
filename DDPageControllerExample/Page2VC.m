@@ -39,6 +39,8 @@
 
 
 
+
+
 -(IBAction)onMoveButtonTap:(id)sender{
 	MainPageController* mpc = (MainPageController*)self.parentViewController.parentViewController;
 	[mpc scrollToPage:0 animated:YES];

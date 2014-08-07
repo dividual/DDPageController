@@ -11,11 +11,14 @@
 
 
 
-@implementation Page2NC
+@implementation Page2NC{
+	UIViewController* _initialTopViewController;
+}
 
 -(void)viewDidLoad{
 	[super viewDidLoad];
 	NSLog( @"" );
+	_initialTopViewController = self.topViewController;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -53,6 +56,31 @@
 	[super viewDidDisappear:animated];
 	NSLog(@"");
 }
+
+
+
+
+-(void)setViewControllersTest{
+	UIViewController* vc2 = [self.storyboard instantiateViewControllerWithIdentifier:@"TestVC"];
+	self.viewControllers = @[_initialTopViewController, vc2];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

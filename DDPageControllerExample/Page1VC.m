@@ -8,6 +8,7 @@
 
 #import "Page1VC.h"
 #import "MainPageController.h"
+#import "Page2NC.h"
 
 @implementation Page1VC{
 	MainPageController* _mpc;
@@ -64,6 +65,37 @@
 -(IBAction)backToPage1VC:(UIStoryboardSegue*)segue{
 	
 }
+
+
+-(IBAction)updatePage2:(id)sender{
+	MainPageController* mpc = (MainPageController*)self.parentViewController;
+	[mpc.page2NC setViewControllersTest];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @end
