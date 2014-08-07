@@ -13,6 +13,11 @@
 
 @implementation Page2NC
 
+-(void)viewDidLoad{
+	[super viewDidLoad];
+	NSLog( @"" );
+}
+
 -(void)viewWillAppear:(BOOL)animated{
 	MainPageController* mpc = (MainPageController*)self.parentViewController;
 	if( [mpc checkVisibleOfViewController:self] == NO ){

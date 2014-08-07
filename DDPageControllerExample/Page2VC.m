@@ -10,6 +10,9 @@
 #import "MainPageController.h"
 
 @implementation Page2VC
+
+
+
 - (void)viewDidLoad{
     [super viewDidLoad];
 	NSLog(@"");

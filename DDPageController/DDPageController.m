@@ -32,29 +32,17 @@
 
 /// 指定したVCが現在表示されているか?
 -(BOOL)checkVisibleOfViewController:(UIViewController*)vc{
-//	NSLog( @"%@", vc );
 	return [_visibleViewControllers containsObject:vc];
-
-	
-	/// 起動直後の_visibleViewController が初期化されていない時のために、座標ベースでのチェック
-	CGRect rect = [vc.view convertRect:vc.view.bounds toView:self.view];// 絶対座標
-//	NSLog( @"%@ %@ %d", vc, NSStringFromCGRect(rect), vc.isMovingFromParentViewController );
-//	NSLog( @"%@", NSStringFromCGRect(_scrollView.frame) );
-	if( rect.origin.x == 0 && rect.size.width == _scrollView.bounds.size.width ){
-		return YES;
-	} else {
-		return NO;
-	}
 }
 
 
 /// ページVCを追加
 -(void)addPageViewController:(UIViewController*)vc{
-	NSAssert(_pageViewControllers, @"");
-	NSAssert(vc, @"");
+	[_pageViewControllers addObject:vc];
+	
+	// もし表示領域に入っているvcなら、visibleViewControllerに追加
 	CGRect rect = [vc.view convertRect:vc.view.bounds toView:self.view];// 絶対座標
 //	NSLog( @"%@", NSStringFromCGRect(rect) );
-	[_pageViewControllers addObject:vc];
 	if( rect.origin.x == 0 ){
 		[_visibleViewControllers addObject:vc];
 	}
