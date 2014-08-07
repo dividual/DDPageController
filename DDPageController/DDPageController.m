@@ -15,14 +15,14 @@
 	CGFloat _lastContentOffsetX;
 	int _lastPageId;
 	NSMutableSet* _visibleViewControllers;
-	NSMutableSet* _pageViewControllers;
+	NSMutableOrderedSet* _pageViewControllers;
 }
 
 
 -(void)awakeFromNib{
 	[super awakeFromNib];
 	_visibleViewControllers = [NSMutableSet new];
-	_pageViewControllers = [NSMutableSet new];
+	_pageViewControllers = [NSMutableOrderedSet new];
 }
 
 -(void)viewDidLoad{
@@ -93,7 +93,7 @@
 		scrollDirection = 0;
 		if( _lastPageId == 0 ){
 		} else {
-			UIViewController* vc = _pageViewControllers.allObjects[_lastPageId-1];
+			UIViewController* vc = [_pageViewControllers objectAtIndex:_lastPageId-1];
 			[_visibleViewControllers addObject:vc];
 			[vc viewWillAppear:YES];
 		}
@@ -101,7 +101,7 @@
 		scrollDirection = 1;
 		if( _lastPageId == _pageViewControllers.count-1 ){
 		} else {
-			UIViewController* vc = _pageViewControllers.allObjects[_lastPageId+1];
+			UIViewController* vc = [_pageViewControllers objectAtIndex:_lastPageId+1];
 			[_visibleViewControllers addObject:vc];
 			[vc viewWillAppear:YES];
 		}
@@ -129,14 +129,14 @@
 	//	NSLog( @"ページ移動直前の現在のページ番号 %d", _lastPageId );
 	
 	/// 初回スクロール用に、現在のVCをvisibleViewControllersに追加しておく
-	UIViewController* current_vc = _pageViewControllers.allObjects[_lastPageId];
+	UIViewController* current_vc = [_pageViewControllers objectAtIndex:_lastPageId];
 	[_visibleViewControllers addObject:current_vc];
 }
 
 -(void)onScrollComplete{
 	NSUInteger page = (_scrollView.contentOffset.x / _scrollView.bounds.size.width);
 	//	NSLog( @"ページが確定しました %d", page );
-	UIViewController* current_vc = _pageViewControllers.allObjects[page];
+	UIViewController* current_vc = [_pageViewControllers objectAtIndex:page];
 	
 	// 他のページの非表示処理
 	NSMutableArray* disappearingViewControllers = [NSMutableArray new];
