@@ -28,6 +28,7 @@
 		4D4F298019932A6700075D8B /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F297F19932A6700075D8B /* UIView+AutoLayout.m */; };
 		4D4F29821993301E00075D8B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4D4F29811993301E00075D8B /* Podfile */; };
 		4D4F29CF19933FF800075D8B /* Page2NC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F29CE19933FF800075D8B /* Page2NC.m */; };
+		4D4F29D11993460D00075D8B /* README in Resources */ = {isa = PBXBuildFile; fileRef = 4D4F29D01993460D00075D8B /* README */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		4D4F29811993301E00075D8B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		4D4F29CD19933FF800075D8B /* Page2NC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Page2NC.h; sourceTree = "<group>"; };
 		4D4F29CE19933FF800075D8B /* Page2NC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Page2NC.m; sourceTree = "<group>"; };
+		4D4F29D01993460D00075D8B /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		726B817B4AF2446DB7899707 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 		4D4F29301993295000075D8B = {
 			isa = PBXGroup;
 			children = (
+				4D4F29D01993460D00075D8B /* README */,
 				4D4F29811993301E00075D8B /* Podfile */,
 				4D4F297419932A0900075D8B /* DDPageController */,
 				4D4F29421993295000075D8B /* DDPageControllerExample */,
@@ -272,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D4F29D11993460D00075D8B /* README in Resources */,
 				4D4F29551993295000075D8B /* Images.xcassets in Resources */,
 				4D4F29471993295000075D8B /* InfoPlist.strings in Resources */,
 				4D4F29821993301E00075D8B /* Podfile in Resources */,

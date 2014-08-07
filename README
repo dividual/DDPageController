@@ -1,0 +1,3 @@
+UINavigationController や UITabBarController などのコンテナ ViewController を使う際は、
+かならずコンテナViewController を継承し、viewWillAppear などのライフサイクル系で、そのViewControllerのviewが画面に表示されているかチェックをするようにしましょう。
+そうすると、内包しているViewControllerにも正しくイベントが波及します。

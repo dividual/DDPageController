@@ -45,7 +45,7 @@
 }
 
 
-- (IBAction)backToPage1:(UIStoryboardSegue *)segue{
+- (IBAction)backToPage2:(UIStoryboardSegue *)segue{
     NSLog(@"unwind!!!");
 }
 
