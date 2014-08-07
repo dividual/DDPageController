@@ -27,6 +27,7 @@
 		4D4F297D19932A6000075D8B /* Page2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F297B19932A6000075D8B /* Page2VC.m */; };
 		4D4F298019932A6700075D8B /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F297F19932A6700075D8B /* UIView+AutoLayout.m */; };
 		4D4F29821993301E00075D8B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4D4F29811993301E00075D8B /* Podfile */; };
+		4D4F29CF19933FF800075D8B /* Page2NC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F29CE19933FF800075D8B /* Page2NC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		4D4F297E19932A6700075D8B /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
 		4D4F297F19932A6700075D8B /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
 		4D4F29811993301E00075D8B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		4D4F29CD19933FF800075D8B /* Page2NC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Page2NC.h; sourceTree = "<group>"; };
+		4D4F29CE19933FF800075D8B /* Page2NC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Page2NC.m; sourceTree = "<group>"; };
 		726B817B4AF2446DB7899707 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -142,6 +145,8 @@
 				4D4F29521993295000075D8B /* MainPageController.m */,
 				4D4F297819932A6000075D8B /* Page1VC.h */,
 				4D4F297919932A6000075D8B /* Page1VC.m */,
+				4D4F29CD19933FF800075D8B /* Page2NC.h */,
+				4D4F29CE19933FF800075D8B /* Page2NC.m */,
 				4D4F297A19932A6000075D8B /* Page2VC.h */,
 				4D4F297B19932A6000075D8B /* Page2VC.m */,
 				4D4F29431993295000075D8B /* Supporting Files */,
@@ -326,6 +331,7 @@
 				4D4F29531993295000075D8B /* MainPageController.m in Sources */,
 				4D4F294D1993295000075D8B /* AppDelegate.m in Sources */,
 				4D4F297C19932A6000075D8B /* Page1VC.m in Sources */,
+				4D4F29CF19933FF800075D8B /* Page2NC.m in Sources */,
 				4D4F297719932A2C00075D8B /* DDPageController.m in Sources */,
 				4D4F298019932A6700075D8B /* UIView+AutoLayout.m in Sources */,
 				4D4F29491993295000075D8B /* main.m in Sources */,

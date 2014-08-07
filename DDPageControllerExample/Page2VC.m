@@ -9,10 +9,7 @@
 #import "Page2VC.h"
 #import "MainPageController.h"
 
-@implementation Page2VC{
-	MainPageController* _mpc;
-}
-
+@implementation Page2VC
 - (void)viewDidLoad{
     [super viewDidLoad];
 	NSLog(@"");
@@ -20,20 +17,18 @@
 }
 
 
--(void)willMoveToParentViewController:(UIViewController *)parent{
-	[super willMoveToParentViewController:parent];
-	_mpc = (MainPageController*)parent;
-}
-
 -(void)viewWillAppear:(BOOL)animated{
-	if( [_mpc checkVisibleOfViewController:self] == NO ){
+	MainPageController* mpc = (MainPageController*)self.parentViewController.parentViewController;
+	if( [mpc checkVisibleOfViewController:self] == NO ){
 		return;
 	}
 	[super viewWillAppear:animated];
 	NSLog(@"");
 }
+
 -(void)viewDidAppear:(BOOL)animated{
-	if( [_mpc checkVisibleOfViewController:self] == NO ){
+	MainPageController* mpc = (MainPageController*)self.parentViewController.parentViewController;
+	if( [mpc checkVisibleOfViewController:self] == NO ){
 		return;
 	}
 	[super viewDidAppear:animated];
@@ -41,7 +36,8 @@
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
-	if( [_mpc checkVisibleOfViewController:self] == NO ){
+	MainPageController* mpc = (MainPageController*)self.parentViewController.parentViewController;
+	if( [mpc checkVisibleOfViewController:self] == NO ){
 		return;
 	}
 	[super viewWillDisappear:animated];
@@ -49,7 +45,8 @@
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
-	if( [_mpc checkVisibleOfViewController:self] == NO ){
+	MainPageController* mpc = (MainPageController*)self.parentViewController.parentViewController;
+	if( [mpc checkVisibleOfViewController:self] == NO ){
 		return;
 	}
 	[super viewDidDisappear:animated];

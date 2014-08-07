@@ -142,10 +142,10 @@
             </objects>
             <point key="canvasLocation" x="1403" y="1364"/>
         </scene>
-        <!--Page2VC-->
+        <!--Page2NC-->
         <scene sceneID="08v-gZ-hr1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="1Hj-QW-6bf" customClass="Page2VC" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="1Hj-QW-6bf" customClass="Page2NC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8fd-bO-ZQb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -190,10 +190,10 @@
             </objects>
             <point key="canvasLocation" x="2128" y="-876"/>
         </scene>
-        <!--View Controller-->
+        <!--Page2VC-->
         <scene sceneID="sdm-nT-Rge">
             <objects>
-                <viewController id="CiY-Cm-jEK" sceneMemberID="viewController">
+                <viewController id="CiY-Cm-jEK" customClass="Page2VC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ARh-7k-oHh"/>
                         <viewControllerLayoutGuide type="bottom" id="uzt-Gg-c73"/>
