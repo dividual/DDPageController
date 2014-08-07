@@ -144,8 +144,8 @@
 		if( vc == current_vc ){
 			continue;
 		}
-		[vc viewWillDisappear:YES];
-		[vc viewDidDisappear:YES];
+		[vc viewWillDisappear:NO];
+		[vc viewDidDisappear:NO];
 		[disappearingViewControllers addObject:vc];
 	}
 	for (UIViewController* vc in disappearingViewControllers) {
