@@ -4,11 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Page Controller-->
         <scene sceneID="RwA-rP-tyT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZNi-Wm-v7C" sceneMemberID="firstResponder"/>
-                <viewController id="shQ-gp-b1d" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="shQ-gp-b1d" customClass="MainPageController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MdR-ZW-i0T"/>
                         <viewControllerLayoutGuide type="bottom" id="fe0-AM-Sua"/>
@@ -82,6 +81,7 @@
                         <outlet property="_scrollView" destination="6uG-Cy-Ec9" id="o9O-Sx-RXB"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZNi-Wm-v7C" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-170" y="344"/>
         </scene>
@@ -108,7 +108,7 @@
         <scene sceneID="Iom-kf-NLb">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="BLg-EZ-U2b" customClass="Page1VC" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="AyL-oe-FFh">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -188,7 +188,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7KH-Sh-5n0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="RxA-HK-wo3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1720" y="-898"/>
+            <point key="canvasLocation" x="2128" y="-876"/>
         </scene>
         <!--Page2VC-->
         <scene sceneID="sdm-nT-Rge">
@@ -258,7 +258,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UzY-kI-ajB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1720" y="-79"/>
+            <point key="canvasLocation" x="1756" y="-79"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jjm-IS-S61">
@@ -276,7 +276,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5Y-pR-PwQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1309" y="-898"/>
+            <point key="canvasLocation" x="1717" y="-876"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

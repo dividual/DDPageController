@@ -10,6 +10,9 @@
 
 @interface DDPageController : UIViewController <UIScrollViewDelegate>
 
+/// 指定したVCが現在表示されているか?
+-(BOOL)checkVisibleOfViewController:(UIViewController*)vc;
+
 -(void)addPageViewController:(UIViewController*)vc;
 
 @end

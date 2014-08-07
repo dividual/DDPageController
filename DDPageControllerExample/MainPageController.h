@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "DDPageController.h"
 
-@interface ViewController : DDPageController
+@interface MainPageController : DDPageController
 
 @end

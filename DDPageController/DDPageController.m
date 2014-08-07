@@ -28,11 +28,23 @@
 
 
 
+#pragma mark - パブリックメソッド
+
+/// 指定したVCが現在表示されているか?
+-(BOOL)checkVisibleOfViewController:(UIViewController*)vc{
+	return [_visibleViewControllers containsObject:vc];
+}
+
+
+/// ページVCを追加
 -(void)addPageViewController:(UIViewController*)vc{
 	NSAssert(_pageViewControllers, @"");
 	NSAssert(vc, @"");
 	[_pageViewControllers addObject:vc];
 }
+
+
+
 
 
 
@@ -72,16 +84,16 @@
 			return;
 		}
 		UIViewController* vc = _pageViewControllers.allObjects[_lastPageId-1];
-		[vc viewWillAppear:YES];
 		[_visibleViewControllers addObject:vc];
+		[vc viewWillAppear:YES];
 	} else {
 		scrollDirection = 1;
 		if( _lastPageId == _pageViewControllers.count-1 ){
 			return;
 		}
 		UIViewController* vc = _pageViewControllers.allObjects[_lastPageId+1];
-		[vc viewWillAppear:YES];
 		[_visibleViewControllers addObject:vc];
+		[vc viewWillAppear:YES];
 	}
 	
 	scrollDirectionChecked = YES;

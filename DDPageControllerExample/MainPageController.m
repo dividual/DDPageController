@@ -6,11 +6,11 @@
 //  Copyright (c) 2014年 noughts. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainPageController.h"
 #import "UIView+AutoLayout.h"
 
 
-@implementation ViewController{
+@implementation MainPageController{
 	__weak IBOutlet UIScrollView* _scrollView;
 	__weak IBOutlet UIView* _mainContainer_view;
 }
@@ -24,6 +24,7 @@
 		[self addPageViewController:vc];
 	}
 }
+
 
 
 /// 着信ステータスバー切り替えに対応
