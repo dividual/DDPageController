@@ -95,7 +95,9 @@
 		} else {
 			UIViewController* vc = [_pageViewControllers objectAtIndex:_lastPageId-1];
 			[_visibleViewControllers addObject:vc];
-			[vc viewWillAppear:YES];
+			if( [vc isKindOfClass:[UIImagePickerController class]] ){
+				[vc viewWillAppear:NO];
+			}
 		}
 	} else {
 		scrollDirection = 1;
@@ -103,7 +105,9 @@
 		} else {
 			UIViewController* vc = [_pageViewControllers objectAtIndex:_lastPageId+1];
 			[_visibleViewControllers addObject:vc];
-			[vc viewWillAppear:YES];
+			if( [vc isKindOfClass:[UIImagePickerController class]] ){
+				[vc viewWillAppear:NO];
+			}
 		}
 	}
 }
@@ -144,8 +148,10 @@
 		if( vc == current_vc ){
 			continue;
 		}
-		[vc viewWillDisappear:NO];
-		[vc viewDidDisappear:NO];
+		if( [vc isKindOfClass:[UIImagePickerController class]] ){
+			[vc viewWillDisappear:NO];
+			[vc viewDidDisappear:NO];
+		}
 		[disappearingViewControllers addObject:vc];
 	}
 	for (UIViewController* vc in disappearingViewControllers) {
@@ -154,7 +160,10 @@
 	
 	/// 新しいページに移動した時のみviewDidAppear処理
 	if( page != _lastPageId ){
-		[current_vc viewDidAppear:YES];// iOS標準に合わせ、非表示処理をしてから、新しいVCの表示処理をする
+		if( [current_vc isKindOfClass:[UIImagePickerController class]] ){
+			[current_vc viewDidAppear:NO];// iOS標準に合わせ、非表示処理をしてから、新しいVCの表示処理をする
+		}
+		
 	}
 	
 	scrollDirectionChecked = NO;
