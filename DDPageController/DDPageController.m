@@ -25,6 +25,10 @@
 	_pageViewControllers = [NSMutableSet new];
 }
 
+-(void)viewDidLoad{
+	[super viewDidLoad];
+	_scrollView.delegate = self;
+}
 
 
 
