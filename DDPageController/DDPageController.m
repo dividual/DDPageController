@@ -7,7 +7,7 @@
 //
 
 #import "DDPageController.h"
-
+#import <KVOController/FBKVOController.h>
 
 
 @implementation DDPageController{
@@ -67,6 +67,7 @@
 	if( scrollDirectionChecked ){
 		return;
 	}
+	scrollDirectionChecked = YES;
 	
 	/// コンテンツより外へのスクロールは無視
 	if( _lastContentOffsetX < 0 ){
@@ -81,22 +82,20 @@
 	if( scrollView.contentOffset.x < _lastContentOffsetX ){
 		scrollDirection = 0;
 		if( _lastPageId == 0 ){
-			return;
+		} else {
+			UIViewController* vc = _pageViewControllers.allObjects[_lastPageId-1];
+			[_visibleViewControllers addObject:vc];
+			[vc viewWillAppear:YES];
 		}
-		UIViewController* vc = _pageViewControllers.allObjects[_lastPageId-1];
-		[_visibleViewControllers addObject:vc];
-		[vc viewWillAppear:YES];
 	} else {
 		scrollDirection = 1;
 		if( _lastPageId == _pageViewControllers.count-1 ){
-			return;
+		} else {
+			UIViewController* vc = _pageViewControllers.allObjects[_lastPageId+1];
+			[_visibleViewControllers addObject:vc];
+			[vc viewWillAppear:YES];
 		}
-		UIViewController* vc = _pageViewControllers.allObjects[_lastPageId+1];
-		[_visibleViewControllers addObject:vc];
-		[vc viewWillAppear:YES];
 	}
-	
-	scrollDirectionChecked = YES;
 }
 
 
