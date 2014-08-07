@@ -18,44 +18,21 @@
 
 
 -(void)viewWillAppear:(BOOL)animated{
-	MainPageController* mpc = (MainPageController*)self.parentViewController.parentViewController;
-	if( [mpc checkVisibleOfViewController:self] == NO ){
-		return;
-	}
 	[super viewWillAppear:animated];
 	NSLog(@"");
 }
-
 -(void)viewDidAppear:(BOOL)animated{
-	MainPageController* mpc = (MainPageController*)self.parentViewController.parentViewController;
-	if( [mpc checkVisibleOfViewController:self] == NO ){
-		return;
-	}
 	[super viewDidAppear:animated];
 	NSLog(@"");
 }
-
 -(void)viewWillDisappear:(BOOL)animated{
-	MainPageController* mpc = (MainPageController*)self.parentViewController.parentViewController;
-	if( [mpc checkVisibleOfViewController:self] == NO ){
-		return;
-	}
 	[super viewWillDisappear:animated];
 	NSLog(@"");
 }
-
 -(void)viewDidDisappear:(BOOL)animated{
-	MainPageController* mpc = (MainPageController*)self.parentViewController.parentViewController;
-	if( [mpc checkVisibleOfViewController:self] == NO ){
-		return;
-	}
 	[super viewDidDisappear:animated];
 	NSLog(@"");
 }
-
-
-
-
 
 
 
