@@ -32,8 +32,19 @@
 
 /// 指定したVCが現在表示されているか?
 -(BOOL)checkVisibleOfViewController:(UIViewController*)vc{
+	BOOL b = [_visibleViewControllers containsObject:vc];
+	if( b ){
+		return YES;
+	}
+	
+	/// 起動直後の_visibleViewController が初期化されていない時のために、座標ベースでのチェック
 	CGRect rect = [vc.view convertRect:vc.view.bounds toView:self.view];// 絶対座標
-	return CGRectIntersectsRect( rect, self.scrollView.bounds );
+//	NSLog( @"%@ %@", vc, NSStringFromCGRect(rect) );
+	if( rect.origin.x == 0 ){
+		return YES;
+	} else {
+		return NO;
+	}
 }
 
 

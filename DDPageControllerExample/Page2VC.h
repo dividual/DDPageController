@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Page2VC : UIViewController
+@interface Page2VC : UINavigationController
 
 @end

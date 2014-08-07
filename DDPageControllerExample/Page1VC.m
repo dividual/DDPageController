@@ -20,10 +20,11 @@
     // Do any additional setup after loading the view.
 }
 
--(void)viewDidLayoutSubviews{
-	[super viewDidLayoutSubviews];
-	_mpc = (MainPageController*)self.parentViewController;
+-(void)willMoveToParentViewController:(UIViewController *)parent{
+	[super willMoveToParentViewController:parent];
+	_mpc = (MainPageController*)parent;
 }
+
 
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -58,10 +59,6 @@
 }
 
 
-
-- (IBAction)backToPage1:(UIStoryboardSegue *)segue{
-    NSLog(@"unwind!!!");
-}
 
 
 

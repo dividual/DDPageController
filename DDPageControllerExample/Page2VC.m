@@ -20,21 +20,20 @@
 }
 
 
--(void)viewDidLayoutSubviews{
-	[super viewDidLayoutSubviews];
-	_mpc = (MainPageController*)self.parentViewController.parentViewController;
+-(void)willMoveToParentViewController:(UIViewController *)parent{
+	[super willMoveToParentViewController:parent];
+	_mpc = (MainPageController*)parent;
 }
 
-
 -(void)viewWillAppear:(BOOL)animated{
-	if( [_mpc checkVisibleOfViewController:self.parentViewController] == NO ){
+	if( [_mpc checkVisibleOfViewController:self] == NO ){
 		return;
 	}
 	[super viewWillAppear:animated];
 	NSLog(@"");
 }
 -(void)viewDidAppear:(BOOL)animated{
-	if( [_mpc checkVisibleOfViewController:self.parentViewController] == NO ){
+	if( [_mpc checkVisibleOfViewController:self] == NO ){
 		return;
 	}
 	[super viewDidAppear:animated];
@@ -42,7 +41,7 @@
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
-	if( [_mpc checkVisibleOfViewController:self.parentViewController] == NO ){
+	if( [_mpc checkVisibleOfViewController:self] == NO ){
 		return;
 	}
 	[super viewWillDisappear:animated];
@@ -50,11 +49,32 @@
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
-	if( [_mpc checkVisibleOfViewController:self.parentViewController] == NO ){
+	if( [_mpc checkVisibleOfViewController:self] == NO ){
 		return;
 	}
 	[super viewDidDisappear:animated];
 	NSLog(@"");
 }
+
+
+
+
+
+
+
+- (IBAction)backToPage1:(UIStoryboardSegue *)segue{
+    NSLog(@"unwind!!!");
+}
+
+
+
+
+
+
+
+
+
+
+
 
 @end
