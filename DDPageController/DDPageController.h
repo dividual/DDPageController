@@ -10,6 +10,8 @@
 
 @interface DDPageController : UIViewController <UIScrollViewDelegate>
 
+@property(nonatomic,weak) IBOutlet UIScrollView* scrollView;
+
 /// 指定したVCが現在表示されているか?
 -(BOOL)checkVisibleOfViewController:(UIViewController*)vc;
 

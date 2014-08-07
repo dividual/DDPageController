@@ -11,13 +11,12 @@
 
 
 @implementation MainPageController{
-	__weak IBOutlet UIScrollView* _scrollView;
 	__weak IBOutlet UIView* _mainContainer_view;
 }
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-	_scrollView.delegate = self;
+	self.scrollView.delegate = self;
 	
 	for (UIViewController* vc in self.childViewControllers) {
 		[self addPageViewController:vc];

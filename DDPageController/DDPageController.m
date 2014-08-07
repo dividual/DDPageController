@@ -32,7 +32,8 @@
 
 /// 指定したVCが現在表示されているか?
 -(BOOL)checkVisibleOfViewController:(UIViewController*)vc{
-	return [_visibleViewControllers containsObject:vc];
+	CGRect rect = [vc.view convertRect:vc.view.bounds toView:self.view];// 絶対座標
+	return CGRectIntersectsRect( rect, self.scrollView.bounds );
 }
 
 

@@ -78,7 +78,7 @@
                     <size key="freeformSize" width="640" height="568"/>
                     <connections>
                         <outlet property="_mainContainer_view" destination="crA-gg-P2m" id="Ef0-lz-wcm"/>
-                        <outlet property="_scrollView" destination="6uG-Cy-Ec9" id="o9O-Sx-RXB"/>
+                        <outlet property="scrollView" destination="6uG-Cy-Ec9" id="qa0-j6-STw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZNi-Wm-v7C" sceneMemberID="firstResponder"/>
