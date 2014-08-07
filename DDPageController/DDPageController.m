@@ -63,6 +63,9 @@
 	[_visibleViewControllers addObject:current_vc];
 }
 
+
+
+
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
 	if( scrollDirectionChecked ){
 		return;

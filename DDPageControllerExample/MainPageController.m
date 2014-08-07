@@ -18,7 +18,6 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
 	_scrollView.delegate = self;
-	NSLog( @"%@", self.childViewControllers );
 	
 	for (UIViewController* vc in self.childViewControllers) {
 		[self addPageViewController:vc];
