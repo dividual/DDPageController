@@ -30,6 +30,13 @@
 
 #pragma mark - パブリックメソッド
 
+/// 指定したページにスクロール
+-(void)scrollToPage:(NSUInteger)index animated:(BOOL)animated{
+	CGRect targetRect = CGRectMake(320*index, 0, 320, 320);
+	[self onScrollWillBegin];
+	[self.scrollView scrollRectToVisible:targetRect animated:animated];
+}
+
 /// 指定したVCが現在表示されているか?
 -(BOOL)checkVisibleOfViewController:(UIViewController*)vc{
 	return [_visibleViewControllers containsObject:vc];
@@ -59,17 +66,8 @@
 	if( scrollDirectionChecked ){
 		return;
 	}
-	_lastContentOffsetX = scrollView.contentOffset.x;
-	_lastPageId = (scrollView.contentOffset.x / scrollView.bounds.size.width);
-	//	NSLog( @"ページ移動直前の現在のページ番号 %d", _lastPageId );
-	
-	/// 初回スクロール用に、現在のVCをvisibleViewControllersに追加しておく
-	UIViewController* current_vc = _pageViewControllers.allObjects[_lastPageId];
-	[_visibleViewControllers addObject:current_vc];
+	[self onScrollWillBegin];
 }
-
-
-
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
 	if( scrollDirectionChecked ){
@@ -107,10 +105,32 @@
 }
 
 
+-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+	[self onScrollComplete];
+}
+
 
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView*)scrollView{
-	NSUInteger page = (scrollView.contentOffset.x / scrollView.bounds.size.width);
+	[self onScrollComplete];
+}
+
+
+
+#pragma mark - その他
+
+-(void)onScrollWillBegin{
+	_lastContentOffsetX = _scrollView.contentOffset.x;
+	_lastPageId = (_scrollView.contentOffset.x / _scrollView.bounds.size.width);
+	//	NSLog( @"ページ移動直前の現在のページ番号 %d", _lastPageId );
+	
+	/// 初回スクロール用に、現在のVCをvisibleViewControllersに追加しておく
+	UIViewController* current_vc = _pageViewControllers.allObjects[_lastPageId];
+	[_visibleViewControllers addObject:current_vc];
+}
+
+-(void)onScrollComplete{
+	NSUInteger page = (_scrollView.contentOffset.x / _scrollView.bounds.size.width);
 	//	NSLog( @"ページが確定しました %d", page );
 	UIViewController* current_vc = _pageViewControllers.allObjects[page];
 	
@@ -135,6 +155,17 @@
 	
 	scrollDirectionChecked = NO;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

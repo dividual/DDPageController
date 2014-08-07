@@ -39,6 +39,12 @@
 
 
 
+-(IBAction)onMoveButtonTap:(id)sender{
+	MainPageController* mpc = (MainPageController*)self.parentViewController.parentViewController;
+	[mpc scrollToPage:0 animated:YES];
+}
+
+
 - (IBAction)backToPage1:(UIStoryboardSegue *)segue{
     NSLog(@"unwind!!!");
 }

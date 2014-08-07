@@ -12,6 +12,9 @@
 
 @property(nonatomic,weak) IBOutlet UIScrollView* scrollView;
 
+/// 指定したページにスクロール
+-(void)scrollToPage:(NSUInteger)index animated:(BOOL)animated;
+
 /// 指定したVCが現在表示されているか?
 -(BOOL)checkVisibleOfViewController:(UIViewController*)vc;
 
